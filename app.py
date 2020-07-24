@@ -8,8 +8,6 @@ from nltk_utils import bag_of_words, tokenize
 
 
 
-#bot_name = "Sam"
-
 app = Flask(__name__)
 
 @app.route("/")
@@ -20,9 +18,13 @@ def hello():
 def sms_reply():
     with open('intents.json', 'r') as f:
         intents = json.load(f)
-    
+    if torch.cuda.is_available():
+        map_location = lambda storage, loc: storage.cuda()
+    else:
+        map_location = 'cpu'
+
     FILE = "data.pth"
-    data = torch.load(FILE)
+    data = torch.load(FILE, map_location=map_location)
     
     input_size = data["input_size"]
     hidden_size = data["hidden_size"]
