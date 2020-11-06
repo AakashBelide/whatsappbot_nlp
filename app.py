@@ -16,7 +16,7 @@ def hello():
 
 @app.route("/sms", methods=['POST'])
 def sms_reply():
-    with open('dataset.json', 'r') as f:
+    with open('dataset3.json', 'r') as f:
         intents = json.load(f)
     if torch.cuda.is_available():
         map_location = lambda storage, loc: storage.cuda()
@@ -55,7 +55,7 @@ def sms_reply():
     
         probs = torch.softmax(output, dim=1)
         prob = probs[0][predicted.item()]
-    
+
         if prob.item() > 0.75:
             for intent in intents["intents"]:
                 if tag == intent["tag"]:
@@ -66,7 +66,6 @@ def sms_reply():
         else:
             resp = MessagingResponse()
             resp.message("I do not understand...".format(msg))
-        """Respond to incoming calls with a simple text message."""
     
         return str(resp)
 

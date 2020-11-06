@@ -8,11 +8,16 @@
                 "Is anyone there?",
                 "Hello",
                 "Good day",
-                "Whats up"
+                "Whats up",
+                "Hey"
             ],
             "responses": [
                 "Hello!",
                 "Good to see you again!",
+                "Hi there, how can I help?",
+                "Hey :-)",
+                "Hello, thanks for visiting",
+                "Hi there, what can I do for you?",
                 "Hi there, how can I help?"
             ],
             "context_set": ""
@@ -32,6 +37,11 @@
                 "Goodbye!"
             ],
             "context_set": ""
+        },
+        {
+            "tag": "thanks",
+            "patterns": ["Thanks", "Thank you", "That's helpful", "Thank's a lot!"],
+            "responses": ["Happy to help!", "Any time!", "My pleasure"]
         },
         {
             "tag": "age",
@@ -59,32 +69,6 @@
                 "You can call me Tim.",
                 "I'm Tim!",
                 "I'm Tim aka Tech With Tim."
-            ],
-            "context_set": ""
-        },
-        {
-            "tag": "shop",
-            "patterns": [
-                "Id like to buy something",
-                "whats on the menu",
-                "what do you reccommend?",
-                "could i get something to eat"
-            ],
-            "responses": [
-                "We sell chocolate chip cookies for $2!",
-                "Cookies are on the menu!"
-            ],
-            "context_set": ""
-        },
-        {
-            "tag": "hours",
-            "patterns": [
-                "when are you guys open",
-                "what are your hours",
-                "hours of operation"
-            ],
-            "responses": [
-                "We are open 7am-4pm Monday-Friday!"
             ],
             "context_set": ""
         },
