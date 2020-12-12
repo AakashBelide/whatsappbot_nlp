@@ -2,3 +2,4 @@ mod.py
 dataset2.json
 debug.log
 scrape.py
+data_old.pth

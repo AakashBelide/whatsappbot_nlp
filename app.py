@@ -16,7 +16,7 @@ def hello():
 
 @app.route("/sms", methods=['POST'])
 def sms_reply():
-    with open('dataset3.json', 'r') as f:
+    with open('dis.json', 'r') as f:
         intents = json.load(f)
     if torch.cuda.is_available():
         map_location = lambda storage, loc: storage.cuda()
