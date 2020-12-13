@@ -1,6 +1,87 @@
 {
     "intents": [
         {
+            "tag": "greeting",
+            "patterns": [
+                "Hi",
+                "How are you",
+                "Is anyone there?",
+                "Hello",
+                "Good day",
+                "Whats up",
+                "Hey"
+            ],
+            "responses": [
+                "Hello!",
+                "Good to see you again!",
+                "Hi there, how can I help?",
+                "Hey :-)",
+                "Hello, thanks for visiting",
+                "Hi there, what can I do for you?",
+                "Hi there, how can I help?"
+            ],
+            "context_set": ""
+        },
+        {
+            "tag": "goodbye",
+            "patterns": [
+                "cya",
+                "See you later",
+                "Goodbye",
+                "I am Leaving",
+                "Have a Good day"
+            ],
+            "responses": [
+                "Sad to see you go :(",
+                "Talk to you later",
+                "Goodbye!"
+            ],
+            "context_set": ""
+        },
+        {
+            "tag": "thanks",
+            "patterns": [
+                "Thanks",
+                "Thank you",
+                "That's helpful",
+                "Thank's a lot!"
+            ],
+            "responses": [
+                "Happy to help!",
+                "Any time!",
+                "My pleasure"
+            ]
+        },
+        {
+            "tag": "age",
+            "patterns": [
+                "how old",
+                "how old is tim",
+                "what is your age",
+                "how old are you",
+                "age?"
+            ],
+            "responses": [
+                "I am 18 years old!",
+                "18 years young!"
+            ],
+            "context_set": ""
+        },
+        {
+            "tag": "name",
+            "patterns": [
+                "what is your name",
+                "what should I call you",
+                "whats your name?"
+            ],
+            "responses": [
+                "You can call me Tim.",
+                "I'm Tim!",
+                "I'm Tim aka Tech With Tim."
+            ],
+            "context_set": ""
+        },
+        {
             "tag": "Abdominal Pain info",
             "patterns": [
                 "What is Abdominal Pain?",
@@ -125,62 +206,62 @@
             ]
         },
         {
-            "tag": "Alopecia (hair loss) info",
+            "tag": "Alopecia info",
             "patterns": [
-                "What is Alopecia (hair loss)?",
-                "Tell me about Alopecia (hair loss)",
-                "Explain about Alopecia (hair loss)",
-                "Can you tell me about Alopecia (hair loss)?"
+                "What is Alopecia?",
+                "Tell me about Alopecia",
+                "Explain about Alopecia",
+                "Can you tell me about Alopecia?"
             ],
             "responses": [
                 "Partial or complete loss of hair is called alopecia. Hair loss usually develops gradually and may be patchy or diffuse (all over). One loses up to 100 hair from the scalp everyday.\r\nBaldness is not usually caused by disease. It is also related to aging, heredity or changes in the hormones. There can be male pattern baldness or female pattern baldness."
             ]
         },
         {
-            "tag": "Alopecia (hair loss) symptoms",
+            "tag": "Alopecia symptoms",
             "patterns": [
-                "What are the symptoms of Alopecia (hair loss)?",
-                "Tell me the symptoms of Alopecia (hair loss)",
-                "How do we know if we have Alopecia (hair loss)?",
-                "How do I know if I have Alopecia (hair loss)?"
+                "What are the symptoms of Alopecia)?",
+                "Tell me the symptoms of Alopecia",
+                "How do we know if we have Alopecia?",
+                "How do I know if I have Alopecia?"
             ],
             "responses": [
                 "No Symptoms."
             ]
         },
         {
-            "tag": "Alopecia (hair loss) causes",
+            "tag": "Alopecia causes",
             "patterns": [
-                "What are the causes for Alopecia (hair loss)",
-                "Tell me the causes for Alopecia (hair loss)",
-                "How is Alopecia (hair loss) caused?",
-                "How does Alopecia (hair loss) start?"
+                "What are the causes for Alopecia",
+                "Tell me the causes for Alopecia",
+                "How is Alopecia caused?",
+                "How does Alopecia start?"
             ],
             "responses": [
                 "There are many reasons for hair loss. It include following reasons:\r\nHair Disorders\r\n\r\nHereditary thinning or baldness: It is also calledandrogenetic alopecia. It is regarded as the most common cause of hair loss. Hereditary hair loss in men is seen as a receding hairline as well as hair loss on top of the scalp. Women, on the other hand, tends to have their hairline and have visible thinning of hair over the front and top of the scalp.\r\nAlopecia areata. It is an autoimmune disease that causes hair loss on the scalp and elsewhere on the body. It develops in people of all ages and hair is lost in patches\r\n\r\nCicatricial (scarring) alopecia: It can develop in otherwise healthy men and women, cicatricial alopecia is a rare condition that destroys hair follicles. Scar tissue forms where the follicles once were and re-growth is not possible. Treatment attempts to stop the inflammation that destroys the hair follicles.\r\n\r\nDisease\r\n\r\nUnderlying medical condition: Decreasing hair loss is regarded as warning sign for about 30 diseases. Hair loss often can be stopped or reversed with treatment for the underlying disease. Medical conditions that lead to hair loss are thyroid disease and anaemia caused by an iron deficiency.\r\n\r\nSome cancer treatments: Radiation therapy and some chemotherapeutic medications can also cause hair loss. While hair loss is usually temporary, it can be the most distressing part of therapy.\r\n\r\nRingworm of the scalp. Hair loss can also be caused due to fungal infection, which is most common in children, can cause balding and scaling on the scalp.\r\n\r\nTrichotillomania. It is a disorder that causes people to repeatedly pull out their own hair. Aside from a constant urge to pull out the hair on the scalp, sufferers often say they feel compelled to pull out their eyelashes, nose hair, eyebrows, and other hair on their bodies.\r\n\r\nStress and Hormones\r\n\r\nStress: Hair loss can also occur if a person is mentally or physically stressed, or after a major surgery, high fever, severe infection, or even flu.\r\n\r\nHormone fluctuations: Any change in hormonal levels can cause hair loss especially in women. Hair loss is common during menopause and after childbirth due to falling oestrogen levels. When hair loss is caused by falling oestrogen levels, the loss is usually temporary. Hair can be re grown .\r\n\r\nDiet\r\n\r\nWeight loss: People having weight issues can also have hair loss. This hair loss is common, and hair growth does return to normal with proper diet and weight.\r\n\r\nVitamin A excess: Intake of too much vitamin A through vitamin supplements or medications can also lead to hair loss.\r\nProtein intake too low: Hair loss can also occur when the body is not getting enough protein, it conserves the protein. It does get by shifting hair growth into the resting phase. Within 2 to 3 months, the person usually sees visible hair loss. This can be reversed and prevented by eating enough protein. \r\nIron intake too low. Consuming too little iron can lead to hair loss. Good vegetarian sources of iron are iron-fortified cereals, soybeans, pumpkin seeds, white beans, lentils, and spinach. Clams, oysters, and organ meats top the list of good animal sources of iron.\r\n\r\nEating disorder. An eating disorder such as anorexia or bulimia is the other cause of hair loss.\r\n\r\nMedication\r\nMedications that can cause hair loss include:\r\n\r\nBlood thinners\r\nHigh-dose vitamin A\r\nMedicines for arthritis, depression, gout, heart problems, and high blood pressure\r\nBirth control pills: Some women taking or discontinuing birth control pills experience hair loss. This usually occurs in women with an inherited tendency toward hair thinning.\r\n\r\nHair Care Practices\r\n\r\nHair cosmetics: Frequent colouring of hair can cause the hair to break. Regular or improper use of dyes, gels, relaxers, and sprays also can cause hair breakage. Dermatologists recommend limiting use of these hair cosmetics to reduce hair breakage.\r\n\r\nBlow dryers, flat irons, and similar devices. Regular use of a blow dryer tends to damage hair. The high heat from a blow dryer can boil the water in the hair shaft leaving the hair brittle and prone to breakage. Allowing the hair to air dry and styling it only when dry will lessen this risk. Dermatologists also recommend limiting the use of flat irons, which straighten hair by using high heat, and other devices such as curling irons.\r\nHairpins, clips, and rubber bands: If hair are held tightly with hairpins, clips, and rubber bands, it can break hair. To minimize hair breakage, one should use loosely fitting clips and wear them in different areas of the scalp so that hair breakage is not localized in a specific area.\r\nToo much or vigorous grooming: Regular shampooing, combing, or brushing (100 strokes or more a day) or doing any of these too vigorously can cause hair breakage. When hair breakage occurs, the hair appears shaggy or too thin."
             ]
         },
         {
-            "tag": "Alopecia (hair loss) diagnosis",
+            "tag": "Alopecia diagnosis",
             "patterns": [
-                "How to diagnose Alopecia (hair loss)?",
-                "Tell methods to diagnose Alopecia (hair loss)",
-                "How can we diagnose Alopecia (hair loss)?",
-                "How can Alopecia (hair loss) be cured?",
-                "How to cure Alopecia (hair loss)?"
+                "How to diagnose Alopecia?",
+                "Tell methods to diagnose Alopecia",
+                "How can we diagnose Alopecia?",
+                "How can Alopecia be cured?",
+                "How to cure Alopecia?"
             ],
             "responses": [
                 "Dermatologists can diagnose hair loss by asking questions about medical history, family history. A dermatologist may also carefully look at the scalp to know the condition of scalp."
             ]
         },
         {
-            "tag": "Alopecia (hair loss) management",
+            "tag": "Alopecia management",
             "patterns": [
-                "How can we manage Alopecia (hair loss)?",
-                "Methods to manage Alopecia (hair loss)",
-                "How can I manage Alopecia (hair loss)?",
-                "How can one manage Alopecia (hair loss)?",
-                "Ways to manage Alopecia (hair loss)"
+                "How can we manage Alopecia?",
+                "Methods to manage Alopecia",
+                "How can I manage Alopecia?",
+                "How can one manage Alopecia?",
+                "Ways to manage Alopecia"
             ],
             "responses": [
                 "Treatment of hair loss depends upon the cause of disease.\r\nTreatment available without a prescription\r\n\r\n\r\nMinoxidil:This medicine is applied to the scalp. It can stop hair from getting thinner and also stimulate hair growth on the top of the scalp. It is the only hair re-growth product approved for men and women. A dermatologist generally combine minoxidil with another treatment.\r\nLaser devices:Brushes, combs, and other hand-held devices that emit laser light also stimulate hair growth. These devices might make hair look more youthful in some people. Because the FDA classifies these products as medical devices, the products do not undergo the rigorous testing that medicines undergo. The long-term effectiveness and safety for these devices are not known.\r\n\r\nPrescription medicine\r\nFinasteride:The FDA approved this medicine to treat men with hair loss. It comes in pill form and helps slow hair loss in most (about 88%) men. It helps stimulate hair re-growth in many (about 66%) men. Finasteride works by stopping the body from making a male hormone, dihydrotestosterone (DHT).\r\n\r\nCorticosteroid:If your hair loss is caused by inflammation in body, a dermatologist may inject a medicine called a corticosteroid into scalp. This can help stop the inflammation that happens when a person has alopecia areata. A corticosteroid is different from an anabolic steroid.\r\n\r\nProcedures\r\nThe type of procedure that a dermatologist recommends will depend on how much hairyou have lost. To achieve the best results, a dermatologist may use one or more of the following procedures:\r\n\r\nHair transplantation:Skin on the scalp that has good hair growth is removed and transplanted to areas of the scalp that need hair.\r\nScalp reduction:Bald scalp is surgically removed and hair-bearing scalp is brought closer together to reduce balding. Scalp reduction surgery can be performed alone or in conjunction with a hair transplant.\r\nScalp expansion:Devices are inserted under the scalp for about 3 to 4 weeks to stretch the skin. This procedure may be performed before a scalp reduction to make the scalp more lax. It also can be performed solely to stretch hair-bearing areas, which reduces balding.\r\nScalp flaps:A hair-bearing segment of scalp is surgically moved and placed where hair is needed."
@@ -378,7 +459,11 @@
                 "What is Acquired Immuno Deficiency Syndrome?",
                 "Tell me about Acquired Immuno Deficiency Syndrome",
                 "Explain about Acquired Immuno Deficiency Syndrome",
-                "Can you tell me about Acquired Immuno Deficiency Syndrome?"
+                "Can you tell me about Acquired Immuno Deficiency Syndrome?",
+                "What is AIDS?",
+                "Tell me about AIDS",
+                "Explain about AIDS",
+                "Can you tell AIDS?"
             ],
             "responses": [
                 "AIDS is caused by human immunodeficiency virus (HIV). HIV kills or damages the body's immune system cells.\r\nThere are two types of HIV.Type I and Type II. Type I is more common in India.\r\nAIDS is generally caused by unprotected sex with an infected partner. It may also spread through the use of infected syringes of HIV infected people and blood transfusions.\r\nThe first sign of AIDS is influenza (flu) like symptoms or may be swollen glands, but at times, symptoms might not appear. Symptoms may appear after two or three months. Generally, blood test is done to confirm the diagnosis. There is no cure, but there are many medicines to fight/ control HIV infection.\r\nNational AIDS Control Programme\r\n\r\nPrevention, Management and control of RTI &amp; STI"
@@ -390,7 +475,11 @@
                 "What are the symptoms of Acquired Immuno Deficiency Syndrome?",
                 "Tell me the symptoms of Acquired Immuno Deficiency Syndrome",
                 "How do we know if we have Acquired Immuno Deficiency Syndrome?",
-                "How do I know if I have Acquired Immuno Deficiency Syndrome?"
+                "How do I know if I have Acquired Immuno Deficiency Syndrome?",
+                "What are the symptoms of AIDS?",
+                "Tell me the symptoms of AIDS",
+                "How do we know if we have AIDS?",
+                "How do I know if I have AIDS?"
             ],
             "responses": [
                 "There are 3 main stages of AIDS:\r\nAcute symptoms, clinical latency and severe symptoms\r\nAcute symptoms: The majority of people infected by HIV develop Influenza (flu) like illness within a month or two, after the virus enters the body. This illness, known as primary or acute HIV infection, may last for a few weeks. Possible symptoms include:\r\n\r\nHeadache\r\nFever\r\nSore throat\r\nMuscle soreness\r\nRash\r\nMouth or genital ulcers\r\nSwollen lymph glands, mainly on the neck\r\nJoint pain\r\nDiarrhoea\r\nNight sweats\r\n\r\nClinical latency:\r\nThere is persistent swelling of lymph nodes during clinical latent HIV. Else, there are no specific signs and symptoms. However, body remains infected with the virus.\r\nSevere symptoms:\r\n\r\nHeadaches\r\nBlurred and distorted vision\r\nCough and shortness of breath\r\nPersistent white spots or unusual lesions on tongue or in mouth\r\nSoaking night sweats\r\nShaking chills or fever higher than 100 F (38 C) for several weeks\r\nChronic diarrhoea\r\nPersistent, unexplained fatigue\r\nWeight loss\r\nSkin rashes"
@@ -402,7 +491,11 @@
                 "What are the causes for Acquired Immuno Deficiency Syndrome",
                 "Tell me the causes for Acquired Immuno Deficiency Syndrome",
                 "How is Acquired Immuno Deficiency Syndrome caused?",
-                "How does Acquired Immuno Deficiency Syndrome start?"
+                "How does Acquired Immuno Deficiency Syndrome start?",
+                "What are the causes for AIDS",
+                "Tell me the causes for AIDS",
+                "How is AIDS caused?",
+                "How does AIDS start?"
             ],
             "responses": [
                 "A person becomes infected with HIV/AIDS by several ways:\r\n\r\nBlood transfusions:In some cases, the virus may be transmitted through blood transfusions.\r\nSharing infected needles: HIV can be transmitted through needles and syringes contaminated with infected blood.\r\nSexual Contact: The most frequent mode of transmission of HIV is through sexual contact with an infected person.\r\nFrom mother to child:A pregnant woman infected with HIV virus can transmit the virus to her foetus through their shared blood circulation, or an infected nursing mother can transmit it to her baby through her breast milk."
@@ -415,7 +508,12 @@
                 "Tell methods to diagnose Acquired Immuno Deficiency Syndrome",
                 "How can we diagnose Acquired Immuno Deficiency Syndrome?",
                 "How can Acquired Immuno Deficiency Syndrome be cured?",
-                "How to cure Acquired Immuno Deficiency Syndrome?"
+                "How to cure Acquired Immuno Deficiency Syndrome?",
+                "How to diagnose AIDS?",
+                "Tell methods to diagnose AIDS",
+                "How can we diagnose AIDS?",
+                "How can AIDS be cured?",
+                "How to cure AIDS?"
             ],
             "responses": [
                 "HIV test is done to detect human immunodeficiency virus in saliva, serum or urine. The UNAIDS/WHO policy statement on HIV Testing states that conditions under which people undergo HIV testing must be anchored in a human rights approach that pays due respect to ethical principles . According to these principles, the conduct of HIV testing of individuals must address:\r\nConfidentiality:The entire process of testing and results are kept confidential to give boost toindividuals, couples, and families to learn about their HIV status in the convenience and privacy of their home environment.Home-Based HIV Testing and Counseling (HBHTC) allows rapid HIV tests that are most often used, so that results are available for the client between 15 and 30 minutes. It is:\r\n\r\nAccompanied by counselling (for those who test positive).\r\nConducted with informed consent of the person being tested.\r\n\r\nIn diagnosis of HIV/AIDS several tests can help physician to determine what stage of the disease it is. These tests include:\r\nWindow period:There is a period of time between HIV infection and the appearance of anti-HIV antibodies that can be measured which is called \"window period\".Antibody tests may give false negative (no antibodies are detected despite the presence of HIV) results during the window period, an interval of three weeks to six months between the time of HIV infection and the production of measurable antibodies to HIV sero conversion.\r\nCD4 count: CD4 cells are a type of white blood cell that's specifically targeted and destroyed by HIV. A healthy person's CD4 count can vary from 500 to more than 1,000. Even if a person has no symptoms, HIV infection progresses to AIDS when his or her CD4 count becomes less than 200.\r\nRapid or point-of-care tests:The rapid test is an immunoassay used for screening, and it produces quick results, in 20 minutes or less. Rapid tests use blood or oral fluid to look for antibodies to HIV. If an immunoassay (lab test or rapid test) is conducted during the window period (i.e., the period after exposure but before the test can find antibodies), the test may not find antibodies and may give a false negative result. All immunoassays that are positive need a follow up test to confirm the result.\r\nELISA (enzyme-linked immunosorbent assay):ELISA is set of blood tests used to diagnose HIV infection. ELISA test is performed by inserting a needle to draw blood. A positive result on the ELISA screening test does not necessarily mean that the person has HIV infection. Certain conditions may lead to a false positive result, such as Lyme disease, syphilis, and lupus.\r\nRNA tests: It detects the virus directly (instead of the antibodies to HIV) and thus can detect HIV at about 10 days after infection, as soon as it appears in the bloodstream, before antibodies develop. These tests cost more than antibody tests and are generally not used as a screening test, although doctor may order one as a follow-up test, after a positive antibody test, or as part of a clinical workup.\r\nWestern Blot:A positive ELISA test is always followed by a Western blot test which confirm HIV infection.\r\n*NHP provides indicative information for better understanding of health. For any treatment and diagnosis purpose you should consult your physician."
@@ -428,7 +526,12 @@
                 "Methods to manage Acquired Immuno Deficiency Syndrome",
                 "How can I manage Acquired Immuno Deficiency Syndrome?",
                 "How can one manage Acquired Immuno Deficiency Syndrome?",
-                "Ways to manage Acquired Immuno Deficiency Syndrome"
+                "Ways to manage Acquired Immuno Deficiency Syndrome",
+                "How can we manage AIDS?",
+                "Methods to manage AIDS",
+                "How can I manage AIDS?",
+                "How can one manage AIDS?",
+                "Ways to manage AIDS"
             ],
             "responses": [
                 "Definitive cure for AIDS is yet to be discovered. However, some medicines, given at certain stage of the disease, depending upon CD4 count in the blood of the patient,can prolong life of HIV positive persons.\r\n\r\nReverse transcriptase (RT) inhibitors - It interferes with a critical step during the HIV life cycle and keep the virus from making copies of itself.\r\nProtease inhibitors - It interferes with a protein that HIV uses to make infectious viral particles.\r\nFusion inhibitors - It blocks the virus from entering the body cells.\r\nIntegrase inhibitors - It blocks an enzyme HIV needs, to make copies of itself.\r\nMultidrug combinations - It combines two or more different types of drugs into one. These medicines help people with HIV, but they are not perfect. They do not cure HIV/AIDS. People with HIV infection still have the virus in their bodies. They can still spread HIV to others through unprotected sex and needle sharing, even when they are taking their medicines.\r\n\r\n*NHP provides indicative information for better understanding of health. For any treatment and diagnosis purpose you should consult your physician."
