@@ -5,33 +5,8 @@ import json
 import torch
 from model import NeuralNet
 from nltk_utils import bag_of_words, tokenize
-from sendgrid import SendGridAPIClient
-from sendgrid.helpers.mail import Mail
-from dotenv import load_dotenv
-import os
 
-#API Key
-load_dotenv()
-SENDGRID_API_KEY = os.getenv("API_KEY")
 
-# Error mailer
-def ermailer(body, recipients, Subject):
-    sender = "aakash.belide@gmail.com"
-    message = Mail(
-    from_email=(sender,"Belide Aakash"),
-    to_emails=recipients,
-    subject=Subject,
-    html_content=body)
-
-    #Sending mail
-    try:
-        sg = SendGridAPIClient(SENDGRID_API_KEY)
-        response = sg.send(message)
-        print(response.status_code)
-        print(response.body)
-        print(response.headers)
-    except Exception as e:
-        print(e)
 
 app = Flask(__name__)
 
@@ -61,47 +36,38 @@ def sms_reply():
     model = NeuralNet(input_size, hidden_size, output_size)
     model.load_state_dict(model_state)
     model.eval()
-
+    while True:
     # Fetch the message
-    msg = request.form.get('Body')
-    org_msg = request.form.get('Body')
-    num = request.form.get('From')
-    n_ind = num.find(":")
-    f_num = num[n_ind+1:]
+        msg = request.form.get('Body')
+        #sentence = input(msg)
+        #if sentence == "quit":
+        #    break
     
-    # Tokenize the received message
-    msg = tokenize(msg)
-    X = bag_of_words(msg, all_words)
-    X = X.reshape(1, X.shape[0])
-    X = torch.from_numpy(X)
-
-    # Predict the appropriate tags for the input message
-    output = model(X)
-    _, predicted = torch.max(output, dim = 1)
-    tag = tags[predicted.item()]
-
-    # Find the probability of each tag
-    probs = torch.softmax(output, dim=1)
-    prob = probs[0][predicted.item()]
-
-    # If the probablity of the predicted tag is greater than 75% then reply with respective message
-    if prob.item() > 0.75:
-        for intent in intents["intents"]:
-            if tag == intent["tag"]:
-                # Create reply
-                resp = MessagingResponse()
-                resp.message(random.choice(intent['responses']).format(msg))
+        #sentence = tokenize(sentence)
+        msg = tokenize(msg)
+        X = bag_of_words(msg, all_words)
+        X = X.reshape(1, X.shape[0])
+        X = torch.from_numpy(X)
     
-    # If the probablity of the predicted tag is less than 75% then reply with error message and send a mail to manager
-    else:
-        resp = MessagingResponse()
-        resp.message("I do not understand. One of our executives would contact you soon.".format(msg))
-        error_body = "Error sending a reply message to: " + str(f_num) + ". The message sent by the user is: " + str(org_msg)
-        sub = str(f_num) + " Message Error!"
-        mail_id = "aakash.belide@gmail.com"
-        ermailer(error_body, mail_id, sub)
+        output = model(X)
+        _, predicted = torch.max(output, dim = 1)
+        tag = tags[predicted.item()]
+    
+        probs = torch.softmax(output, dim=1)
+        prob = probs[0][predicted.item()]
 
-    return str(resp)
+        if prob.item() > 0.75:
+            for intent in intents["intents"]:
+                if tag == intent["tag"]:
+                    # Create reply
+                    resp = MessagingResponse()
+                    resp.message(random.choice(intent['responses']).format(msg))
+            
+        else:
+            resp = MessagingResponse()
+            resp.message("I do not understand. One of our executives would contact you soon.".format(msg))
+    
+        return str(resp)
 
 if __name__ == "__main__":
     app.run(debug=False)
