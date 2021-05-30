@@ -1,4 +1,1 @@
 porter_test
-rslp
-snowball_data
-punkt
