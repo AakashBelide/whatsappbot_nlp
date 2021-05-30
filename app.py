@@ -84,24 +84,23 @@ def sms_reply():
     probs = torch.softmax(output, dim=1)
     prob = probs[0][predicted.item()]
 
+    resp = MessagingResponse()
     # If the probablity of the predicted tag is greater than 75% then reply with respective message
     if prob.item() > 0.75:
         for intent in intents["intents"]:
             if tag == intent["tag"]:
                 # Create reply
-                resp = MessagingResponse()
                 resp.message(random.choice(intent['responses']).format(msg))
     
     # If the probablity of the predicted tag is less than 75% then reply with error message and send a mail to manager
     else:
-        resp = MessagingResponse()
         resp.message("I do not understand. One of our executives would contact you soon.".format(msg))
         error_body = "Error sending a reply message to: " + str(f_num) + ". The message sent by the user is: " + str(org_msg)
         sub = str(f_num) + " Message Error!"
         mail_id = "aakash.belide@gmail.com"
         ermailer(error_body, mail_id, sub)
 
-    return
+    return str(resp)
 
 if __name__ == "__main__":
     app.run(debug=False)
