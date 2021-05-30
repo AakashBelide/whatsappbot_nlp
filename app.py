@@ -92,7 +92,7 @@ def sms_reply():
     # If the probablity of the predicted tag is less than 75% then reply with error message and send a mail to manager
     else:
         resp.message("I do not understand. One of our executives would contact you soon.".format(msg))
-        error_body = "Error sending a reply message to: " + str(f_num) + ". The message sent by the user is: " + str(org_msg)
+        error_body = "Error sending a reply message to: " + str(f_num) + ".\nThe message sent by the user is: " + str(org_msg)
         sub = str(f_num) + " Message Error!"
         mail_id = "aakash.belide@gmail.com"
         ermailer(error_body, mail_id, sub)
