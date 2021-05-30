@@ -14,7 +14,24 @@ import os
 load_dotenv()
 SENDGRID_API_KEY = os.getenv("API_KEY")
 
-app = Flask(__name__)
+# Error mailer
+def ermailer(body, recipients, Subject):
+    sender = "aakash.belide@gmail.com"
+    message = Mail(
+    from_email=(sender,"Belide Aakash"),
+    to_emails=recipients,
+    subject=Subject,
+    html_content=body)
+
+    #Sending mail
+    try:
+        sg = SendGridAPIClient(SENDGRID_API_KEY)
+        response = sg.send(message)
+        print(response.status_code)
+        print(response.body)
+        print(response.headers)
+    except Exception as e:
+        print(e)
 
 # Error mailer
 def ermailer(body, recipients, Subject):
