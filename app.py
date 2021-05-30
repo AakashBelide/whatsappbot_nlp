@@ -16,14 +16,11 @@ SENDGRID_API_KEY = os.getenv("API_KEY")
 
 # Error mailer
 def ermailer(body, recipients, Subject):
-    sender = "aakash.belide@gmail.com"
     message = Mail(
-    from_email=(sender,"Belide Aakash"),
-    to_emails=recipients,
-    subject=Subject,
-    html_content=body)
-
-    #Sending mail
+        from_email="aakash.belide@gmail.com",
+        to_emails=recipients,
+        subject=Subject,
+        html_content=body)
     try:
         sg = SendGridAPIClient(SENDGRID_API_KEY)
         response = sg.send(message)
@@ -31,7 +28,7 @@ def ermailer(body, recipients, Subject):
         print(response.body)
         print(response.headers)
     except Exception as e:
-        print(e)
+        print(e.message)
 
 app = Flask(__name__)
 
