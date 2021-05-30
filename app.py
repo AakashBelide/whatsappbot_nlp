@@ -7,11 +7,14 @@ from model import NeuralNet
 from nltk_utils import bag_of_words, tokenize
 from sendgrid import SendGridAPIClient
 from sendgrid.helpers.mail import Mail
-
-app = Flask(__name__)
+from dotenv import load_dotenv
+import os
 
 #API Key
-SENDGRID_API_KEY = "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"
+load_dotenv()
+SENDGRID_API_KEY = os.getenv("API_KEY")
+
+app = Flask(__name__)
 
 # Error mailer
 def ermailer(body, recipients, Subject):
