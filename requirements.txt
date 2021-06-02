@@ -20,5 +20,5 @@ six==1.15.0
 torchvision==0.3.0
 https://download.pytorch.org/whl/cpu/torch-1.1.0-cp37-cp37m-linux_x86_64.whl
 twilio==6.44.0
-urllib3==1.25.9
+urllib3==1.26.5
 Werkzeug==1.0.1
