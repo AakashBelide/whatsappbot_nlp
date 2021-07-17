@@ -1,5 +1,5 @@
 # whatsappbot_nlp
-A whatsapp chatbot built using Natural Language Processing to understand the user texts and reply back with relevant message.
+A WhatsApp chatbot built using Natural Language Processing to understand the user texts and reply back with a relevant message.
 
 The chatbot is first trained using [Natural Language Toolkit](https://www.nltk.org/) to understand the messages depending upon various tags and randomly choose the appropriate message to reply.
 We use flask and connect it with twilio in order to receive and send messages through [Twilio](https://www.twilio.com/). The chatbot is then connected to the flask app to use the chatbot on whatsapp to reply to the user.
