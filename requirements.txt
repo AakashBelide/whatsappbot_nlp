@@ -10,7 +10,7 @@ json5==0.9.1
 MarkupSafe==1.1.1
 nltk==3.4.5
 numpy==1.19.0
-PyJWT==1.7.1
+PyJWT==2.4.0
 PySocks==1.7.1
 python-dotenv==0.14.0
 pytz==2019.3
